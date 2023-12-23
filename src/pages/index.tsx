@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const IndexPage = () => {
@@ -12,7 +13,6 @@ const IndexPage = () => {
 
   return (
     <div className="grid place-content-center min-w-screen min-h-screen bg-zinc-100">
-      {/* <ScrollProgress /> */}
       <div className="mb-20">
         <div className="text-center">
           <h1 className="text-6xl font-medium tracking-wide text-sky-700">
@@ -40,9 +40,15 @@ const IndexPage = () => {
         <hr className="mt-8 border-t-2"></hr>
 
         <div className="flex justify-center mt-4 mx-auto max-w-fit text-sky-700">
-          <div className={navStyle()}>home</div>
-          <div className={navStyle()}>about</div>
-          <div className={navStyle()}>projects</div>
+          <div className={navStyle()}>
+            <Link to="/">home</Link>
+          </div>
+          <div className={navStyle()}>
+            <Link to="/about">about</Link>
+          </div>
+          <div className={navStyle()}>
+            <Link to="/projects">projects</Link>
+          </div>
         </div>
       </div>
     </div>
