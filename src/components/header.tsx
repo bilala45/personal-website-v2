@@ -12,7 +12,9 @@ const Header = (props: any) => {
 
       <div className="flex justify-center mt-4 mx-auto text-sky-700">
         <div className={navStyle()}>
-          <Link to="/">home</Link>
+          <Link to="/" state={{ fromPage: true }}>
+            home
+          </Link>
         </div>
         <div className={navStyle()}>
           <Link to="/about" state={{ fromHome: false }}>

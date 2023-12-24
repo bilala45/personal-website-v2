@@ -1,6 +1,6 @@
 import * as React from "react";
 import Header from "../components/header";
-import { contentLoadTransitionStyle } from "../styles/styles";
+import { opacityTransition } from "../styles/styles";
 import type { PageProps } from "gatsby";
 
 interface AboutProps {
@@ -22,7 +22,11 @@ const AboutPage = ({ location }: AboutProps) => {
         fromHome={location.state.fromHome}
       ></Header>
 
-      <div className={contentLoadTransitionStyle(loadContent)}>
+      <div
+        className={
+          "max-w-xl mx-auto px-6 pt-10 text-md" + opacityTransition(loadContent)
+        }
+      >
         <div className="font-semibold text-lg">about</div>
         <div className="pt-2">
           Hi! I'm a Master's student studying computer science at Penn. I'm

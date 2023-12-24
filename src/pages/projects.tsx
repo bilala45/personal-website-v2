@@ -3,7 +3,7 @@ import { FaAws, FaJava, FaNodeJs, FaReact, FaPython } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import { SiAmazonec2, SiExpress, SiGatsby } from "react-icons/si";
 import Header from "../components/header";
-import { contentLoadTransitionStyle } from "../styles/styles";
+import { opacityTransition } from "../styles/styles";
 import type { PageProps } from "gatsby";
 import Project from "../components/project";
 
@@ -26,7 +26,11 @@ const ProjectsPage = ({ location }: ProjectsProps) => {
         fromHome={location.state.fromHome}
       ></Header>
 
-      <div className={contentLoadTransitionStyle(loadContent)}>
+      <div
+        className={
+          "max-w-xl mx-auto px-6 pt-10 text-md" + opacityTransition(loadContent)
+        }
+      >
         {Project(
           "SkySift - Mini Search Engine",
           "Web application that analyzes a user's top played songs to generate artist-specific song recommendations.",
