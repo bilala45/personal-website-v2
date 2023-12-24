@@ -1,6 +1,5 @@
 import * as React from "react";
 import Header from "../components/header";
-import { opacityTransition } from "../styles/styles";
 import type { PageProps } from "gatsby";
 
 interface AboutProps {
@@ -14,6 +13,11 @@ const AboutPage = ({ location }: AboutProps) => {
   React.useEffect(() => {
     setLoadContent(true);
   }, []);
+
+  const opacityTransition = (loadContent: boolean) =>
+    `transition-opacity duration-[1000ms] ease-in ${
+      loadContent ? "opacity-100" : "opacity-0"
+    }`;
 
   return (
     <div className="min-w-screen min-h-screen bg-zinc-100">

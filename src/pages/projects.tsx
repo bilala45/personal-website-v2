@@ -3,7 +3,6 @@ import { FaAws, FaJava, FaNodeJs, FaReact, FaPython } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import { SiAmazonec2, SiExpress, SiGatsby } from "react-icons/si";
 import Header from "../components/header";
-import { opacityTransition } from "../styles/styles";
 import type { PageProps } from "gatsby";
 import Project from "../components/project";
 
@@ -19,6 +18,11 @@ const ProjectsPage = ({ location }: ProjectsProps) => {
     setLoadContent(true);
   }, []);
 
+  const opacityTransition = (loadContent: boolean) =>
+    `transition-opacity duration-[1000ms] ease-in ${
+      loadContent ? "opacity-100" : "opacity-0"
+    }`;
+
   return (
     <div className="min-w-screen min-h-screen bg-zinc-100">
       <Header
@@ -28,7 +32,7 @@ const ProjectsPage = ({ location }: ProjectsProps) => {
 
       <div
         className={
-          "max-w-xl mx-auto px-6 pt-10 text-md" + opacityTransition(loadContent)
+          "max-w-xl mx-auto px-6 py-10 text-md" + opacityTransition(loadContent)
         }
       >
         {Project(

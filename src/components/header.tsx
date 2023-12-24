@@ -1,9 +1,22 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { navStyle, headerStyle } from "../styles/styles";
 
 // TODO fix props type
 const Header = (props: any) => {
+  const navStyle = () => {
+    return "mx-4 text-lg hover:text-yellow-500";
+  };
+
+  const headerStyle = (fromHome: boolean, loadContent: boolean) => {
+    if (fromHome) {
+      return `pt-20 transition-transform duration-[300ms] ease-in ${
+        loadContent ? "translate-y-0" : "translate-y-[100%]"
+      }`;
+    } else {
+      return "pt-20";
+    }
+  };
+
   return (
     <div className={headerStyle(props.fromHome, props.loadContent)}>
       <h1 className="text-6xl text-center font-medium tracking-wide text-sky-700">

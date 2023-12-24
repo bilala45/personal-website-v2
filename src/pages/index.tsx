@@ -1,12 +1,31 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
-import { navStyle, iconStyle } from "../styles/styles";
 
 const IndexPage = () => {
+  const [loadContent, setLoadContent] = React.useState(false);
+
+  const iconStyle = () => {
+    return "text-3xl mx-4 hover:text-yellow-500";
+  };
+
+  const navStyle = () => {
+    return "mx-4 text-lg hover:text-yellow-500";
+  };
+
+  const opacityTransition = (loadContent: boolean) =>
+    `transition-opacity duration-[1000ms] ease-in ${
+      loadContent ? "opacity-100" : "opacity-0"
+    }`;
+
+  // Trigger header translation on page load
+  React.useEffect(() => {
+    setLoadContent(true);
+  }, []);
+
   return (
     <div className="grid place-content-center min-w-screen min-h-screen bg-zinc-100">
-      <div className="mb-20">
+      <div className={"mb-20" + opacityTransition(loadContent)}>
         <div className="text-center">
           <h1 className="text-6xl font-medium tracking-wide text-sky-700">
             Bilal Ali
