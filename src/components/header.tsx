@@ -1,15 +1,11 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { navStyle } from "../styles/styles";
+import { navStyle, headerStyle } from "../styles/styles";
 
-// TODO fix type of props
+// TODO fix props type
 const Header = (props: any) => {
   return (
-    <div
-      className={`pt-20 transition-transform duration-[300ms] ease-in ${
-        props.loadContent ? "translate-y-0" : "translate-y-[100%]"
-      }`}
-    >
+    <div className={headerStyle(props.fromHome, props.loadContent)}>
       <h1 className="text-6xl text-center font-medium tracking-wide text-sky-700">
         Bilal Ali
       </h1>
@@ -19,10 +15,14 @@ const Header = (props: any) => {
           <Link to="/">home</Link>
         </div>
         <div className={navStyle()}>
-          <Link to="/about">about</Link>
+          <Link to="/about" state={{ fromHome: false }}>
+            about
+          </Link>
         </div>
         <div className={navStyle()}>
-          <Link to="/projects">projects</Link>
+          <Link to="/projects" state={{ fromHome: false }}>
+            projects
+          </Link>
         </div>
       </div>
     </div>

@@ -37,10 +37,14 @@ const IndexPage = () => {
             <Link to="/">home</Link>
           </div>
           <div className={navStyle()}>
-            <Link to="/about">about</Link>
+            <Link to="/about" state={{ fromHome: true }}>
+              about
+            </Link>
           </div>
           <div className={navStyle()}>
-            <Link to="/projects">projects</Link>
+            <Link to="/projects" state={{ fromHome: true }}>
+              projects
+            </Link>
           </div>
         </div>
       </div>

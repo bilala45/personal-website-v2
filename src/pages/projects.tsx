@@ -4,8 +4,13 @@ import { GrMysql } from "react-icons/gr";
 import { SiAmazonec2, SiExpress, SiGatsby } from "react-icons/si";
 import Header from "../components/header";
 import { contentLoadTransitionStyle } from "../styles/styles";
+import type { PageProps } from "gatsby";
 
-const ProjectsPage = () => {
+interface ProjectsProps {
+  location: PageProps["location"];
+}
+
+const ProjectsPage = ({ location }: ProjectsProps) => {
   const [loadContent, setLoadContent] = React.useState(false);
 
   // Trigger header translation on page load
@@ -47,7 +52,10 @@ const ProjectsPage = () => {
 
   return (
     <div className="min-w-screen min-h-screen bg-zinc-100">
-      <Header loadContent={loadContent}></Header>
+      <Header
+        loadContent={loadContent}
+        fromHome={location.state.fromHome}
+      ></Header>
 
       <div className={contentLoadTransitionStyle(loadContent)}>
         {Project(

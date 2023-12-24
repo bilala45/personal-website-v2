@@ -1,8 +1,17 @@
 import * as React from "react";
 import Header from "../components/header";
 import { contentLoadTransitionStyle } from "../styles/styles";
+import type { PageProps } from "gatsby";
 
-const AboutPage = () => {
+interface AboutProps {
+  location: PageProps["location"];
+}
+
+// if coming from home page, fromHome will be true
+// this needs to be passed to Header
+// if fromHome is true, we remove all of the transition stuff
+
+const AboutPage = ({ location }: AboutProps) => {
   const [loadContent, setLoadContent] = React.useState(false);
 
   // Trigger header translation on page load
@@ -12,7 +21,10 @@ const AboutPage = () => {
 
   return (
     <div className="min-w-screen min-h-screen bg-zinc-100">
-      <Header loadContent={loadContent}></Header>
+      <Header
+        loadContent={loadContent}
+        fromHome={location.state.fromHome}
+      ></Header>
 
       <div className={contentLoadTransitionStyle(loadContent)}>
         <div className="font-semibold text-lg">about</div>
