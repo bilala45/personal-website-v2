@@ -1,19 +1,12 @@
 import * as React from "react";
+import ProjectProps from "../interfaces/ProjectProps";
+import TechIcon from "./techicon";
 
-const Project = (
-  title: string,
-  description: string,
-  technologies: { name: string; icon: React.ReactElement }[]
-) => {
-  const TechIcon = (technology: string, Icon: React.ReactElement) => {
-    return (
-      <span className="flex items-center px-1.5 mr-1.5 w-fit rounded-md bg-slate-300 sm:mt-0 mt-2">
-        {React.cloneElement(Icon, { className: "mr-1" })}
-        {technology}
-      </span>
-    );
-  };
-
+const Project: React.FC<ProjectProps> = ({
+  title,
+  description,
+  technologies,
+}: ProjectProps) => {
   return (
     <>
       <div className="text-lg font-semibold">
@@ -23,7 +16,7 @@ const Project = (
             key={index}
             className="flex flex-wrap sm:pt-3 pt-1 text-black text-sm font-normal"
           >
-            {TechIcon(technology.name, technology.icon)}
+            <TechIcon name={technology.name} icon={technology.icon}></TechIcon>
           </span>
         ))}
       </div>
