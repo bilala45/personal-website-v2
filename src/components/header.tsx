@@ -1,8 +1,11 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import HeaderProps from "../interfaces/HeaderProps";
 
-// TODO fix props type
-const Header = (props: any) => {
+const Header: React.FC<HeaderProps> = ({
+  fromHome,
+  loadContent,
+}: HeaderProps) => {
   const navStyle = () => {
     return "mx-4 text-lg hover:text-yellow-500";
   };
@@ -18,7 +21,7 @@ const Header = (props: any) => {
   };
 
   return (
-    <div className={headerStyle(props.fromHome, props.loadContent)}>
+    <div className={headerStyle(fromHome, loadContent)}>
       <h1 className="text-6xl text-center font-medium tracking-wide text-sky-700">
         Bilal Ali
       </h1>

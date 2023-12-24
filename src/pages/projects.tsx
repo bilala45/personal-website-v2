@@ -9,7 +9,6 @@ import PageProps from "../interfaces/PageProps";
 const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
   const [loadContent, setLoadContent] = React.useState(false);
 
-  // Trigger header translation on page load
   React.useEffect(() => {
     setLoadContent(true);
   }, []);
