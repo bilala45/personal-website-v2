@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
-const IndexPage = () => {
+const IndexPage: React.FC = () => {
   const [loadContent, setLoadContent] = React.useState(false);
 
   const iconStyle = () => {

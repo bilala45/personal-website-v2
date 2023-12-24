@@ -3,14 +3,10 @@ import { FaAws, FaJava, FaNodeJs, FaReact, FaPython } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import { SiAmazonec2, SiExpress, SiGatsby } from "react-icons/si";
 import Header from "../components/header";
-import type { PageProps } from "gatsby";
 import Project from "../components/project";
+import PageProps from "../interfaces/PageProps";
 
-interface ProjectsProps {
-  location: PageProps["location"];
-}
-
-const ProjectsPage = ({ location }: ProjectsProps) => {
+const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
   const [loadContent, setLoadContent] = React.useState(false);
 
   // Trigger header translation on page load
@@ -27,16 +23,17 @@ const ProjectsPage = ({ location }: ProjectsProps) => {
     <div className="min-w-screen min-h-screen bg-zinc-100">
       <Header
         loadContent={loadContent}
-        fromHome={location.state.fromHome}
+        fromHome={location.state?.fromHome ?? false}
       ></Header>
 
       <div
         className={
-          "max-w-xl mx-auto px-6 py-10 text-md" + opacityTransition(loadContent)
+          "max-w-xl mx-auto px-6 pt-10 pb-24 text-md" +
+          opacityTransition(loadContent)
         }
       >
         {Project(
-          "SkySift - Mini Search Engine",
+          "SkySift - mini search engine",
           "Web application that analyzes a user's top played songs to generate artist-specific song recommendations.",
           [
             { name: "Java", icon: <FaJava /> },
@@ -47,7 +44,7 @@ const ProjectsPage = ({ location }: ProjectsProps) => {
 
         <div className="pt-5">
           {Project(
-            "Distributed Web Crawler",
+            "distributed web crawler",
             "Web application that analyzes a user's top played songs to generate artist-specific song recommendations.",
             [{ name: "Java", icon: <FaJava /> }]
           )}
@@ -55,7 +52,7 @@ const ProjectsPage = ({ location }: ProjectsProps) => {
 
         <div className="pt-5">
           {Project(
-            "TopSpin - Tennis Analytics App",
+            "TopSpin - advanced tennis analytics app",
             "Web application that analyzes a user's top played songs to generate artist-specific song recommendations.",
             [
               { name: "Node.js", icon: <FaNodeJs /> },
@@ -69,7 +66,7 @@ const ProjectsPage = ({ location }: ProjectsProps) => {
 
         <div className="pt-5">
           {Project(
-            "Amplify - Artist Recommendation Engine",
+            "Amplify - artist recommendation engine",
             "Web application that analyzes a user's top played songs to generate artist-specific song recommendations.",
             [
               { name: "Node.js", icon: <FaNodeJs /> },
@@ -79,7 +76,7 @@ const ProjectsPage = ({ location }: ProjectsProps) => {
           )}
         </div>
         <div className="pt-5">
-          {Project("Personal Website", "What you're looking at right now!", [
+          {Project("personal website", "What you're looking at right now!", [
             { name: "Gatsby", icon: <SiGatsby /> },
             { name: "React", icon: <FaReact /> },
           ])}

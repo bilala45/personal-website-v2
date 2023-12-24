@@ -1,12 +1,8 @@
 import * as React from "react";
 import Header from "../components/header";
-import type { PageProps } from "gatsby";
+import PageProps from "../interfaces/PageProps";
 
-interface AboutProps {
-  location: PageProps["location"];
-}
-
-const AboutPage = ({ location }: AboutProps) => {
+const AboutPage: React.FC<PageProps> = ({ location }: PageProps) => {
   const [loadContent, setLoadContent] = React.useState(false);
 
   // Trigger header translation on page load
@@ -23,12 +19,13 @@ const AboutPage = ({ location }: AboutProps) => {
     <div className="min-w-screen min-h-screen bg-zinc-100">
       <Header
         loadContent={loadContent}
-        fromHome={location.state.fromHome}
+        fromHome={location.state?.fromHome ?? false}
       ></Header>
 
       <div
         className={
-          "max-w-xl mx-auto px-6 pt-10 text-md" + opacityTransition(loadContent)
+          "max-w-xl mx-auto px-6 pt-10 pb-24 text-md" +
+          opacityTransition(loadContent)
         }
       >
         <div className="font-semibold text-lg">about</div>
