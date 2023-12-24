@@ -1,12 +1,9 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import { navStyle } from "../styles/styles";
 
 // TODO fix type of props
 const Header = (props: any) => {
-  const navStyle = () => {
-    return "mx-4 text-lg hover:text-yellow-500";
-  };
-
   return (
     <div
       className={`pt-20 transition-transform duration-[300ms] ease-in ${

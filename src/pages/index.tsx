@@ -1,16 +1,9 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { navStyle, iconStyle } from "../styles/styles";
 
 const IndexPage = () => {
-  const iconStyle = () => {
-    return "text-3xl mx-4 hover:text-yellow-500";
-  };
-
-  const navStyle = () => {
-    return "text-lg px-4 hover:text-yellow-500 cursor-pointer";
-  };
-
   return (
     <div className="grid place-content-center min-w-screen min-h-screen bg-zinc-100">
       <div className="mb-20">
@@ -39,7 +32,7 @@ const IndexPage = () => {
         </div>
         <hr className="mt-8 border-t-2"></hr>
 
-        <div className="flex justify-center mt-4 mx-auto max-w-fit text-sky-700">
+        <div className="flex justify-center mt-4 mx-auto text-sky-700">
           <div className={navStyle()}>
             <Link to="/">home</Link>
           </div>
