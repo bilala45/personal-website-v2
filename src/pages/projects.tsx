@@ -31,54 +31,67 @@ const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
           opacityTransition(loadContent)
         }
       >
-        {Project(
-          "SkySift - mini search engine",
-          "Web application that analyzes a user's top played songs to generate artist-specific song recommendations.",
-          [
+        <Project
+          title="SkySift - mini search engine"
+          description="text"
+          technologies={[
             { name: "Java", icon: <FaJava /> },
             { name: "EC2", icon: <SiAmazonec2 /> },
             { name: "S3", icon: <FaAws /> },
-          ]
-        )}
+          ]}
+        ></Project>
 
         <div className="pt-5">
-          {Project(
-            "distributed web crawler",
-            "Web application that analyzes a user's top played songs to generate artist-specific song recommendations.",
-            [{ name: "Java", icon: <FaJava /> }]
-          )}
+          <Project
+            title="distributed web crawler"
+            description="text"
+            technologies={[{ name: "Java", icon: <FaJava /> }]}
+          ></Project>
         </div>
 
         <div className="pt-5">
-          {Project(
-            "TopSpin - advanced tennis analytics app",
-            "Web application that analyzes a user's top played songs to generate artist-specific song recommendations.",
-            [
+          <Project
+            title="distributed web crawler"
+            description="text"
+            technologies={[{ name: "Java", icon: <FaJava /> }]}
+          ></Project>
+        </div>
+
+        <div className="pt-5">
+          <Project
+            title="TopSpin - advanced tennis analytics app"
+            description="text"
+            technologies={[
               { name: "Node.js", icon: <FaNodeJs /> },
               { name: "Express.js", icon: <SiExpress /> },
               { name: "React", icon: <FaReact /> },
               { name: "MySQL", icon: <GrMysql /> },
               { name: "Python", icon: <FaPython /> },
-            ]
-          )}
+            ]}
+          ></Project>
         </div>
 
         <div className="pt-5">
-          {Project(
-            "Amplify - artist recommendation engine",
-            "Web application that analyzes a user's top played songs to generate artist-specific song recommendations.",
-            [
+          <Project
+            title="Amplify - artist recommendation engine"
+            description="text"
+            technologies={[
               { name: "Node.js", icon: <FaNodeJs /> },
               { name: "Express.js", icon: <SiExpress /> },
               { name: "React", icon: <FaReact /> },
-            ]
-          )}
+            ]}
+          ></Project>
         </div>
+
         <div className="pt-5">
-          {Project("personal website", "What you're looking at right now!", [
-            { name: "Gatsby", icon: <SiGatsby /> },
-            { name: "React", icon: <FaReact /> },
-          ])}
+          <Project
+            title="Amplify - artist recommendation engine"
+            description="text"
+            technologies={[
+              { name: "Gatsby", icon: <SiGatsby /> },
+              { name: "React", icon: <FaReact /> },
+            ]}
+          ></Project>
         </div>
       </div>
     </div>
