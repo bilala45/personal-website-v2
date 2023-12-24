@@ -7,10 +7,6 @@ interface AboutProps {
   location: PageProps["location"];
 }
 
-// if coming from home page, fromHome will be true
-// this needs to be passed to Header
-// if fromHome is true, we remove all of the transition stuff
-
 const AboutPage = ({ location }: AboutProps) => {
   const [loadContent, setLoadContent] = React.useState(false);
 
