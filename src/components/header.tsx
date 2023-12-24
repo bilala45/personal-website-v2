@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({
   const headerStyle = (fromHome: boolean, loadContent: boolean) => {
     if (fromHome) {
       return `pt-20 transition-transform duration-[300ms] ease-in ${
-        loadContent ? "translate-y-0" : "translate-y-[100%]"
+        loadContent ? "translate-y-0" : "translate-y-[130%]"
       }`;
     } else {
       return "pt-20";
@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({
         Bilal Ali
       </h1>
 
-      <div className="flex justify-center mt-4 mx-auto text-sky-700">
+      <div className="flex justify-center mt-4 mx-auto text-slate-400">
         <div className={navStyle()}>
           <Link to="/" state={{ fromPage: true }}>
             home

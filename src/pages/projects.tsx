@@ -43,15 +43,7 @@ const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
 
         <div className="pt-5">
           <Project
-            title="distributed web crawler"
-            description="text"
-            technologies={[{ name: "Java", icon: <FaJava /> }]}
-          ></Project>
-        </div>
-
-        <div className="pt-5">
-          <Project
-            title="distributed web crawler"
+            title="Distributed web crawler"
             description="text"
             technologies={[{ name: "Java", icon: <FaJava /> }]}
           ></Project>
@@ -85,7 +77,7 @@ const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
 
         <div className="pt-5">
           <Project
-            title="Amplify - artist recommendation engine"
+            title="Personal website"
             description="text"
             technologies={[
               { name: "Gatsby", icon: <SiGatsby /> },

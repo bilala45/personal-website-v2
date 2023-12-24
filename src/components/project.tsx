@@ -11,14 +11,16 @@ const Project: React.FC<ProjectProps> = ({
     <>
       <div className="text-lg font-semibold">
         {title}
-        {technologies.map((technology, index) => (
-          <span
-            key={index}
-            className="flex flex-wrap sm:pt-3 pt-1 text-black text-sm font-normal"
-          >
-            <TechIcon name={technology.name} icon={technology.icon}></TechIcon>
-          </span>
-        ))}
+        <div className="flex flex-wrap">
+          {technologies.map((technology, index) => (
+            <span key={index} className="pt-1">
+              <TechIcon
+                name={technology.name}
+                icon={technology.icon}
+              ></TechIcon>
+            </span>
+          ))}
+        </div>
       </div>
       <div className="pt-3">{description}</div>
     </>

@@ -51,7 +51,7 @@ const IndexPage: React.FC = () => {
         </div>
         <hr className="mt-8 border-t-2"></hr>
 
-        <div className="flex justify-center mt-4 mx-auto text-sky-700">
+        <div className="flex justify-center mt-4 mx-auto text-slate-400">
           <div className={navStyle()}>
             <Link to="/">home</Link>
           </div>
