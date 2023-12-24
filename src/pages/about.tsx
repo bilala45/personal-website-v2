@@ -1,5 +1,6 @@
 import * as React from "react";
 import Header from "../components/header";
+import { contentLoadTransitionStyle } from "../styles/styles";
 
 const AboutPage = () => {
   const [loadContent, setLoadContent] = React.useState(false);
@@ -13,11 +14,7 @@ const AboutPage = () => {
     <div className="min-w-screen min-h-screen bg-zinc-100">
       <Header loadContent={loadContent}></Header>
 
-      <div
-        className={`max-w-xl mx-auto px-6 pt-10 text-md transition-opacity duration-[1000ms] ease-in ${
-          loadContent ? "opacity-100" : "opacity-0"
-        }`}
-      >
+      <div className={contentLoadTransitionStyle(loadContent)}>
         <div className="font-semibold text-lg">about</div>
         <div className="pt-2">
           Hi! I'm a Master's student studying computer science at Penn. I'm
