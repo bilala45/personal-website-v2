@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import Header from "../components/header";
 
 const AboutPage = () => {
   const [loadContent, setLoadContent] = React.useState(false);
@@ -9,39 +9,9 @@ const AboutPage = () => {
     setLoadContent(true);
   }, []);
 
-  const navStyle = () => {
-    return "mx-4 text-lg hover:text-yellow-500";
-  };
-
-  const Header = () => {
-    return (
-      <div
-        className={`pt-20 transition-transform duration-[300ms] ease-in ${
-          loadContent ? "translate-y-0" : "translate-y-[100%]"
-        }`}
-      >
-        <h1 className="text-6xl text-center font-medium tracking-wide text-sky-700">
-          Bilal Ali
-        </h1>
-
-        <div className="flex justify-center mt-4 mx-auto text-sky-700">
-          <div className={navStyle()}>
-            <Link to="/">home</Link>
-          </div>
-          <div className={navStyle()}>
-            <Link to="/about">about</Link>
-          </div>
-          <div className={navStyle()}>
-            <Link to="/projects">projects</Link>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div className="min-w-screen min-h-screen bg-zinc-100">
-      {Header()}
+      <Header loadContent={loadContent}></Header>
 
       <div
         className={`max-w-xl mx-auto px-6 pt-10 text-md transition-opacity duration-[1000ms] ease-in ${
