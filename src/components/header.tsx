@@ -7,7 +7,7 @@ const Header: React.FC<HeaderProps> = ({
   loadContent,
 }: HeaderProps) => {
   const navStyle = () => {
-    return "mx-4 text-lg hover:text-yellow-500";
+    return "mx-4 text-md md:text-lg font-mono tracking-tight hover:text-indigo-500";
   };
 
   const headerStyle = (fromHome: boolean, loadContent: boolean) => {
@@ -22,11 +22,11 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <div className={headerStyle(fromHome, loadContent)}>
-      <h1 className="text-6xl text-center font-medium tracking-wide text-sky-700">
+      <h1 className="text-5xl font-medium text-center tracking-wide">
         Bilal Ali
       </h1>
 
-      <div className="flex justify-center mt-4 mx-auto text-slate-400">
+      <div className="flex justify-center mt-4 mx-auto">
         <div className={navStyle()}>
           <Link to="/" state={{ fromPage: true }}>
             home
