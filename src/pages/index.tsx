@@ -24,7 +24,7 @@ const IndexPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="grid place-content-center min-w-screen min-h-screen bg-sky-100 pb-20">
+    <div className="grid place-content-center min-w-screen min-h-screen bg-sky-100 pb-10">
       <div className={opacityTransition(loadContent)}>
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-medium tracking-wide">

@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({
 
   const headerStyle = (fromHome: boolean, loadContent: boolean) => {
     if (fromHome) {
-      return `pt-20 transition-transform duration-[300ms] ease-in ${
+      return `pt-20 transition-transform duration-[500ms] ${
         loadContent ? "translate-y-0" : "translate-y-[130%]"
       }`;
     } else {
