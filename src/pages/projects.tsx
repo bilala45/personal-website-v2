@@ -28,19 +28,13 @@ const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
           opacityTransition(loadContent)
         }
       >
-        {/* <div className="">
-          <Project
-            title="PennCloud"
-            description="Fault-tolerant cloud application with custom web server, key-value store, and email client."
-            technologies="C++"
-          ></Project>
-        </div> */}
-
         <div className="">
           <Project
             title="SkySift"
             description="Scalable, fault-tolerant search engine with distributed web crawler, web server, key-value store, and analytics engine."
+            collaborators="Jeffrey Xiao, Vishaal Kumar, Lorenzo Lucena Maguire"
             technologies="Java, AWS (EC2, S3)"
+            link="https://bilalali.dev/"
           ></Project>
         </div>
 
@@ -48,7 +42,9 @@ const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
           <Project
             title="TopSpin"
             description="Advanced tennis analytics app."
+            collaborators="Peter Akioyamen, Akanksha Ashok, Noah Capp"
             technologies="Node.js, Express, MySQL, Python, React"
+            link="https://github.com/bilala45/topspin"
           ></Project>
         </div>
 
@@ -57,6 +53,7 @@ const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
             title="Amplify"
             description="Artist-specific music recommendation engine powered by Spotify."
             technologies="Node.js, Express, React"
+            link="https://github.com/bilala45/amplify"
           ></Project>
         </div>
 
@@ -65,6 +62,7 @@ const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
             title="Personal website"
             description="What you're looking at right now!"
             technologies="Gatsby, TypeScript, React"
+            link="https://bilalali.dev/"
           ></Project>
         </div>
       </div>
