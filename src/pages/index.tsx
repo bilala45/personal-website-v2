@@ -6,15 +6,15 @@ const IndexPage: React.FC = () => {
   const [loadContent, setLoadContent] = React.useState(false);
 
   const iconStyle = () => {
-    return "text-3xl mx-4 hover:text-yellow-500";
+    return "text-3xl mx-4 hover:text-indigo-500";
   };
 
   const navStyle = () => {
-    return "mx-4 text-lg hover:text-yellow-500";
+    return "mx-4 text-md md:text-lg font-mono tracking-tight hover:text-indigo-500";
   };
 
   const opacityTransition = (loadContent: boolean) =>
-    `transition-opacity duration-[1000ms] ease-in ${
+    `transition-opacity duration-[500ms] ease-in ${
       loadContent ? "opacity-100" : "opacity-0"
     }`;
 
@@ -24,18 +24,18 @@ const IndexPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="grid place-content-center min-w-screen min-h-screen bg-zinc-100">
-      <div className={"mb-20" + opacityTransition(loadContent)}>
+    <div className="grid place-content-center min-w-screen min-h-screen bg-sky-100 pb-20">
+      <div className={opacityTransition(loadContent)}>
         <div className="text-center">
-          <h1 className="text-6xl font-medium tracking-wide text-sky-700">
-            Bilal Ali
+          <h1 className="text-4xl md:text-5xl font-medium tracking-wide">
+            Hi, I'm Bilal! 👋🏽
           </h1>
-          <h2 className="text-xl mt-5 tracking-wide font-light">
+          <h2 className="text-lg md:text-xl mt-6 font-mono">
             computer science @ upenn
           </h2>
         </div>
 
-        <div className="flex justify-center mt-6 mx-auto py-1 px-1.5">
+        <div className="flex justify-center mt-8 mx-auto py-1 px-1.5">
           <a className={iconStyle()} href="https://github.com/bilala45">
             <FiGithub />
           </a>
@@ -49,9 +49,9 @@ const IndexPage: React.FC = () => {
             <FiMail />
           </a>
         </div>
-        <hr className="mt-8 border-t-2"></hr>
+        <hr className="mt-8 border-t-2 border-slate-500"></hr>
 
-        <div className="flex justify-center mt-4 mx-auto text-slate-400">
+        <div className="flex justify-center mt-4 mx-auto">
           <div className={navStyle()}>
             <Link to="/">home</Link>
           </div>
