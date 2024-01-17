@@ -1,7 +1,4 @@
 import * as React from "react";
-import { FaAws, FaJava, FaNodeJs, FaReact, FaPython } from "react-icons/fa";
-import { GrMysql } from "react-icons/gr";
-import { SiAmazonec2, SiExpress, SiGatsby } from "react-icons/si";
 import Header from "../components/header";
 import Project from "../components/project";
 import PageProps from "../interfaces/PageProps";
@@ -19,7 +16,7 @@ const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
     }`;
 
   return (
-    <div className="min-w-screen min-h-screen bg-zinc-100">
+    <div className="min-w-screen min-h-screen bg-sky-100">
       <Header
         loadContent={loadContent}
         fromHome={location.state?.fromHome ?? false}
@@ -31,58 +28,43 @@ const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
           opacityTransition(loadContent)
         }
       >
-        <Project
-          title="SkySift - mini search engine"
-          description="text"
-          technologies={[
-            { name: "Java", icon: <FaJava /> },
-            { name: "EC2", icon: <SiAmazonec2 /> },
-            { name: "S3", icon: <FaAws /> },
-          ]}
-        ></Project>
-
-        <div className="pt-5">
+        {/* <div className="">
           <Project
-            title="Distributed web crawler"
-            description="text"
-            technologies={[{ name: "Java", icon: <FaJava /> }]}
+            title="PennCloud"
+            description="Fault-tolerant cloud application with custom web server, key-value store, and email client."
+            technologies="C++"
+          ></Project>
+        </div> */}
+
+        <div className="">
+          <Project
+            title="SkySift"
+            description="Scalable, fault-tolerant search engine with distributed web crawler, web server, key-value store, and analytics engine."
+            technologies="Java, AWS (EC2, S3)"
           ></Project>
         </div>
 
-        <div className="pt-5">
+        <div className="pt-8">
           <Project
-            title="TopSpin - advanced tennis analytics app"
-            description="text"
-            technologies={[
-              { name: "Node.js", icon: <FaNodeJs /> },
-              { name: "Express.js", icon: <SiExpress /> },
-              { name: "React", icon: <FaReact /> },
-              { name: "MySQL", icon: <GrMysql /> },
-              { name: "Python", icon: <FaPython /> },
-            ]}
+            title="TopSpin"
+            description="Advanced tennis analytics app."
+            technologies="Node.js, Express, MySQL, Python, React"
           ></Project>
         </div>
 
-        <div className="pt-5">
+        <div className="pt-8">
           <Project
-            title="Amplify - artist recommendation engine"
-            description="text"
-            technologies={[
-              { name: "Node.js", icon: <FaNodeJs /> },
-              { name: "Express.js", icon: <SiExpress /> },
-              { name: "React", icon: <FaReact /> },
-            ]}
+            title="Amplify"
+            description="Artist-specific music recommendation engine powered by Spotify."
+            technologies="Node.js, Express, React"
           ></Project>
         </div>
 
-        <div className="pt-5">
+        <div className="pt-8">
           <Project
             title="Personal website"
-            description="text"
-            technologies={[
-              { name: "Gatsby", icon: <SiGatsby /> },
-              { name: "React", icon: <FaReact /> },
-            ]}
+            description="What you're looking at right now!"
+            technologies="Gatsby, TypeScript, React"
           ></Project>
         </div>
       </div>

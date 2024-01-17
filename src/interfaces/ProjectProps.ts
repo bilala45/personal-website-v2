@@ -1,9 +1,7 @@
-import TechIconProps from "./TechIconProps";
-
 interface ProjectProps {
   title: string;
   description: string;
-  technologies: TechIconProps[];
+  technologies: string;
 }
 
 export default ProjectProps;

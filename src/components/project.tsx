@@ -1,6 +1,5 @@
 import * as React from "react";
 import ProjectProps from "../interfaces/ProjectProps";
-import TechIcon from "./techicon";
 
 const Project: React.FC<ProjectProps> = ({
   title,
@@ -9,20 +8,14 @@ const Project: React.FC<ProjectProps> = ({
 }: ProjectProps) => {
   return (
     <>
-      <div className="text-lg font-semibold">
+      <a
+        className="text-md underline underline-offset-4 font-mono font-medium hover:text-indigo-500"
+        href="https://bilalali.dev/"
+      >
         {title}
-        <div className="flex flex-wrap">
-          {technologies.map((technology, index) => (
-            <span key={index} className="pt-1">
-              <TechIcon
-                name={technology.name}
-                icon={technology.icon}
-              ></TechIcon>
-            </span>
-          ))}
-        </div>
-      </div>
-      <div className="pt-3">{description}</div>
+      </a>
+      <div className="pt-2 text-sm italic">{technologies}</div>
+      <div className="pt-1">{description}</div>
     </>
   );
 };
