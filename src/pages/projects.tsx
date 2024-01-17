@@ -11,7 +11,7 @@ const ProjectsPage: React.FC<PageProps> = ({ location }: PageProps) => {
   }, []);
 
   const opacityTransition = (loadContent: boolean) =>
-    `transition-opacity duration-[1000ms] ease-in ${
+    `transition-opacity duration-[300ms] ease-in ${
       loadContent ? "opacity-100" : "opacity-0"
     }`;
 
